@@ -1,79 +1,255 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Resume : 蘇百彥簡歷" />
+    <title>蘇百彥簡報
+    </title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Resume</title>
-  </head>
+    <!-- Documentation extras -->
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/pygments-manni.css" rel="stylesheet">
 
-  <body>
+    <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/iansucoding/resume">View on GitHub</a>
+    <!--[if lt IE 9]><script src="../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-          <h1 id="project_title">Resume</h1>
-          <h2 id="project_tagline">蘇百彥簡歷</h2>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+    <script id="twitter-wjs" async="" src="https://platform.twitter.com/widgets.js"></script>
+    <script async="" src="http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"></script>
+    <script async="" src="http://www.google-analytics.com/ga.js"></script>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/iansucoding/resume/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/iansucoding/resume/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+    <style id="holderjs-style" type="text/css"></style>
+    <style>
+        #adzerk_by {
+            display: none;
+        }
+
+        /* horiz */
+        .carbonad {
+            display: block;
+            background: #fdfdfd;
+            background-image: -moz-linear-gradient(top, #f8f8f8, #fdfdfd);
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8f8f8),color-stop(1, #fdfdfd));
+            border: 1px solid #d5d5d5;
+            font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            height: 118px;
+            line-height: 15px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .carbonad-img {
+            border: none;
+            display: inline;
+            float: left;
+            height: 100px;
+            margin: 9px;
+            width: 130px;
+        }
+
+        .carbonad-text {
+            display: inline;
+            float: left;
+            width: 142px;
+            padding-top: 13px;
+        }
+
+            .carbonad-text a {
+                color: #000000;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+        .carbonad-tag {
+            float: left;
+            margin-top: 9px;
+            text-align: center;
+            width: 142px;
+            color: #999999;
+        }
+
+            .carbonad-tag a {
+                color: #999999;
+                text-decoration: none;
+            }
+
+        .imgs {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bs-header" id="content">
+        <div class="container">
+            <h1>蘇百彥個人簡報</h1>
+            <p>含個人介紹，相關工作經歷及成果簡報。</p>
+        </div>
     </div>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix" role="complementary">
+                    <ul class="nav bs-sidenav bs-docs-sidenav">
+                        <li class="active">
+                            <a href="#p1" class="links">個人介紹</a>
+                        </li>
+                        <li class="">
+                            <a href="#p2" class="links">相關工作經歷</a>
+                        </li>
+                        <li class="">
+                            <a href="#p3" class="links">成果簡報</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9" role="main">
+                <div class="page" id="p1">
+                    <h1 class="text-warning">個人介紹 ABOUT</h1>
+                    <table class="table table-bordered" style="font-size: 22px;">
+                        <tr>
+                            <th class="success">姓名</th>
+                            <td>蘇百彥 Ian Su</td>
+                        </tr>
+                        <tr>
+                            <th class="success">學歷</th>
+                            <td>立德(康寧)大學資訊管理系 / 景文科大電子科技算機組</td>
+                        </tr>
+                        <tr>
+                            <th class="success">居住地</th>
+                            <td>台南善化</td>
+                        </tr>
+                        <tr>
+                            <th class="success">就業狀態</th>
+                            <td>工作中(仍在職) </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="page" id="p2">
+                    <h1 class="text-success">相關工作經歷 EXPERIENCE</h1>
+                    <table class="table table-bordered" style="font-size: 22px;">
+                        <tr class="success">
+                            <th>公司</th>
+                            <th>職務</th>
+                            <th>工作內容</th>
+                            <th>使用技術</th>
+                        </tr>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+                        <tr>
+                            <td>啟耀光電</td>
+                            <td>MES程式設計</td>
+                            <td>
+                                <ul>
+                                    <li>生產管理系統</li>
+                                    <li>電子簽核系統</li>
+                                    <li>良率資訊報表</li>
+                                    <li>倉庫管理系統</li>
+                                    <li>實驗室資訊管理系統</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>ASP</li>
+                                    <li>ASP.NET WebForm(VB.NET)</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>CSS</li>
+                                    <li>MSSQL</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>多奇數位</td>
+                            <td>網站程式設計</td>
+                            <td>
+                                <ul>
+                                    <li>商業活動網站</li>
+                                    <li>社群網站</li>
+                                    <li>Web API</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>ASP.NET MVC(C#)</li>
+                                    <li>Entity Framework</li>
+                                    <li>Linq</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>MSSQL</li>
+                                    <li>Facebook API</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="page" id="p3">
+                    <h1 class="text-info">成果簡報 REPORT</h1>
+                    <p><a href="http://112.124.24.14:8080">建構中的電影社群網站</a></p>
+                    <a class="fancybox" rel="group" href="img/home.png" caption="首頁">
+                        <img src="img/home.png" style="width: 200px;" title="首頁" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/movie.png" caption="電影瀑布流">
+                        <img src="img/movie.png" style="width: 200px;" title="電影瀑布流" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/back.png" caption="後臺管理">
+                        <img src="img/back.png" style="width: 200px;" title="後臺管理" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/topic.png" caption="專題瀑布流">
+                        <img src="img/topic.png" style="width: 200px;" title="專題瀑布流" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/topicmessage.png" caption="專題回應">
+                        <img src="img/topicmessage.png" style="width: 200px;" title="專題回應" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/user.png" caption="個人頁面">
+                        <img src="img/user.png" style="width: 200px;" title="個人頁面" class="imgs img-thumbnail" /></a>
+                    <a class="fancybox" rel="group" href="img/message.png" caption="訊息">
+                        <img src="img/message.png" style="width: 200px;" title="訊息" class="imgs img-thumbnail" /></a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Resume maintained by <a href="https://github.com/iansucoding">iansucoding</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</body>
 </html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.8.3.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="js/affix.js"></script>
+<script src="js/application.js"></script>
+<!-- Add fancyBox -->
+
+<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script>
+    $(function () {
+        $('.links').click(function () {
+            var $this = $(this);
+            var href = $this.attr('href');
+            var top = $(href).offset().top;
+
+            $('.links').parent('li').removeClass('active');
+            $this.parent('li').addClass('active');
+            $(document.body).animate({
+                'scrollTop': top
+            }, 500);
+            return false;
+        });
+        $('.imgs').tooltip();
+
+        $(".fancybox").fancybox({
+            beforeLoad: function () {
+                this.title = $(this.element).attr('caption');
+            }
+        });
+    });
+</script>
