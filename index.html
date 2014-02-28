@@ -93,10 +93,21 @@
     </style>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=667293773328019";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="bs-header" id="content">
         <div class="container">
             <h1>蘇百彥個人簡報</h1>
             <p>含個人介紹，相關工作經歷及成果簡報。</p>
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         </div>
     </div>
     <div class="container bs-docs-container">
