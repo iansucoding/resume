@@ -1,50 +1,41 @@
-[  
-   {  
-      "name":"木劍",
-      "enname":"Wood Sword",
-      "attack":1,
-      "image":"images/swords/woodsword.gif"
-   },
-   {  
-      "name":"學徒劍",
-      "enname":"Apprentice Sword",
-      "attack":2,
-      "image":"images/swords/apprenticesword.gif"
-   },
-   {  
-      "name":"彎刀",
-      "enname":"Scimitar",
-      "attack":3,
-      "image":"images/swords/scimitar.gif"
-   },
-   {  
-      "name":"軍刀",
-      "enname":"Sabre",
-      "attack":4,
-      "image":"images/swords/sabre.gif"
-   },
-   {  
-      "name":"寬劍",
-      "enname":"Broad Sword",
-      "attack":8,
-      "image":"images/swords/broadsword.gif"
-   },
-   {  
-      "name":"重劍",
-      "enname":"Bastard Sword",
-      "attack":12,
-      "image":"images/swords/bastardsword.gif"
-   },
-   {  
-      "name":"符文劍",
-      "enname":"Rune Sword",
-      "attack":24,
-      "image":"images/swords/runesword.gif"
-   },
-   {  
-      "name":"屠龍劍",
-      "enname":"Dragon Buster",
-      "attack":32,
-      "image":"images/swords/dragonbuster.gif"
-   }
-]
+[{
+    "name": "木劍",
+    "enname": "Wood Sword",
+    "attack": 1,
+    "image": "images/swords/woodsword.gif"
+}, {
+    "name": "學徒劍",
+    "enname": "Apprentice Sword",
+    "attack": 2,
+    "image": "images/swords/apprenticesword.gif"
+}, {
+    "name": "彎刀",
+    "enname": "Scimitar",
+    "attack": 3,
+    "image": "images/swords/scimitar.gif"
+}, {
+    "name": "軍刀",
+    "enname": "Sabre",
+    "attack": 4,
+    "image": "images/swords/sabre.gif"
+}, {
+    "name": "寬劍",
+    "enname": "Broad Sword",
+    "attack": 8,
+    "image": "images/swords/broadsword.gif"
+}, {
+    "name": "重劍",
+    "enname": "Bastard Sword",
+    "attack": 12,
+    "image": "images/swords/bastardsword.gif"
+}, {
+    "name": "符文劍",
+    "enname": "Rune Sword",
+    "attack": 24,
+    "image": "images/swords/runesword.gif"
+}, {
+    "name": "屠龍劍",
+    "enname": "Dragon Buster",
+    "attack": 32,
+    "image": "images/swords/dragonbuster.gif"
+}]

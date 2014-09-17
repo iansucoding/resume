@@ -1,17 +1,22 @@
 <table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>武器名稱 Weapon Name</th>
-      <th>攻擊力 Attack</th>
-      <th></th>
-    </tr></thead>
+    <thead>
+        <tr>
+            <th></th>
+            <th>武器名稱 Weapon Name</th>
+            <th>攻擊力 Attack</th>
+            <th></th>
+        </tr>
+    </thead>
     <tbody>
-     <tr ng-repeat="sword in swords">
-      <td><img ng-src="{{sword.image}}"/></td>
-      <td>{{sword.name}} {{sword.enname}}</td>
-      <td>{{sword.attack}}</td>
-      <td><button ng-click="getSword(sword.attack,sword.name)">購買 Buy</button></td>
-    </tr>
-  </tbody>
+        <tr ng-repeat="sword in swords">
+            <td>
+                <img ng-src="{{sword.image}}" />
+            </td>
+            <td>{{sword.name}} {{sword.enname}}</td>
+            <td>{{sword.attack}}</td>
+            <td>
+                <button ng-click="getSword(sword.attack,sword.name)">購買 Buy</button>
+            </td>
+        </tr>
+    </tbody>
 </table>
