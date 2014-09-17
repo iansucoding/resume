@@ -26,6 +26,12 @@
    // 商店
    app.controller('StoreCtrl', function($scope,$http){
       $scope.hero = _hero;
+      $http.get('js/armor.json').success(function(data){
+         $scope.armors = data;
+      }); 
+      $http.get('js/helm.json').success(function(data){
+         $scope.helms = data;
+      });  
       // 接收資料
       // 參考：http://toddmotto.com/all-about-angulars-emit-broadcast-on-publish-subscribing/
       $scope.$on('getSword', function (event, data) {
@@ -37,7 +43,7 @@
           });
       $scope.$on('getHelm', function (event, data) {
          var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
-         currentHelmObj = _helms.filter(function(obj) {
+         currentHelmObj = $scope.helms.filter(function(obj) {
             return obj.name === $scope.hero.helm;
              })[0], // 目前的頭盔物件
              currentHelmDefense = currentHelmObj===undefined?0:currentHelmObj.defense; // 目前的頭盔物件的防禦力
@@ -49,7 +55,7 @@
       });
       $scope.$on('getArmor', function (event, data) {
          var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
-         currentArmorObj = _armors.filter(function(obj) {
+         currentArmorObj = $scope.armors.filter(function(obj) {
             return obj.name === $scope.hero.armor;
              })[0], // 目前的盔甲物件
              currentArmorDefense = currentArmorObj===undefined?0:currentArmorObj.defense; // 目前的盔甲物件的防禦力
