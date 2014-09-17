@@ -35,33 +35,34 @@
       // 接收資料
       // 參考：http://toddmotto.com/all-about-angulars-emit-broadcast-on-publish-subscribing/
       $scope.$on('getSword', function (event, data) {
-         var currentAttack = $scope.hero.attack,// 未更換裝備前的攻擊力
-             diffAttack = parseInt(data.attack,10) - currentAttack ; // 更換裝備後, 攻擊力提升或是下降的數據
-             console.log('取得武器"'+ data.name +'(攻擊力 ' + data.attack + ')", 攻擊力提升了 ' + diffAttack + ' 點');
-             $scope.hero.attack = data.attack;
-             $scope.hero.weapon = data.name;
-          });
+          var currentAttack = $scope.hero.attack,// 未更換裝備前的攻擊力
+              diffAttack = parseInt(data.attack,10) - currentAttack ; // 更換裝備後, 攻擊力提升或是下降的數據
+          //
+          $scope.message = '取得武器"'+ data.name +'(攻擊力 ' + data.attack + ')", 攻擊力提升了 ' + diffAttack + ' 點';
+          $scope.hero.attack = data.attack;
+          $scope.hero.weapon = data.name;
+      });
       $scope.$on('getHelm', function (event, data) {
-         var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
-         currentHelmObj = $scope.helms.filter(function(obj) {
-            return obj.name === $scope.hero.helm;
-             })[0], // 目前的頭盔物件
-             currentHelmDefense = currentHelmObj===undefined?0:currentHelmObj.defense; // 目前的頭盔物件的防禦力
-             diffDefense = data.defense - currentHelmDefense ;
-         //console.log(xxx=currentHelmObj);
-         console.log('取得頭盔 "'+ data.name +'(防禦力 ' + data.defense+')", 防禦力提升了 ' + diffDefense + ' 點'); 
-         $scope.hero.helm = data.name;
-         $scope.hero.defense = currentDefense + diffDefense;
+          var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
+              currentHelmObj = $scope.helms.filter(function(obj) {
+                 return obj.name === $scope.hero.helm;
+              })[0], // 目前的頭盔物件
+              currentHelmDefense = currentHelmObj===undefined?0:currentHelmObj.defense; // 目前的頭盔物件的防禦力
+              diffDefense = data.defense - currentHelmDefense ;
+          //
+          $scope.message  = '取得頭盔 "'+ data.name +'(防禦力 ' + data.defense+')", 防禦力提升了 ' + diffDefense + ' 點';
+          $scope.hero.helm = data.name;
+          $scope.hero.defense = currentDefense + diffDefense;
       });
       $scope.$on('getArmor', function (event, data) {
-         var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
-         currentArmorObj = $scope.armors.filter(function(obj) {
-            return obj.name === $scope.hero.armor;
-             })[0], // 目前的盔甲物件
-             currentArmorDefense = currentArmorObj===undefined?0:currentArmorObj.defense; // 目前的盔甲物件的防禦力
-             diffDefense = data.defense - currentArmorDefense ;
-         //console.log(xxx=currentHelmObj);
-         console.log('取得盔甲 "'+ data.name +'(防禦力 ' + data.defense+')", 防禦力提升了 ' + diffDefense + ' 點'); 
+          var currentDefense = $scope.hero.defense, // 未更換裝備前的防禦力
+              currentArmorObj = $scope.armors.filter(function(obj) {
+                  return obj.name === $scope.hero.armor;
+              })[0], // 目前的盔甲物件
+              currentArmorDefense = currentArmorObj===undefined?0:currentArmorObj.defense; // 目前的盔甲物件的防禦力
+              diffDefense = data.defense - currentArmorDefense ;
+          //
+         $scope.message = '取得盔甲 "'+ data.name +'(防禦力 ' + data.defense+')", 防禦力提升了 ' + diffDefense + ' 點';
          $scope.hero.armor = data.name;
          $scope.hero.defense = currentDefense + diffDefense;
       });
