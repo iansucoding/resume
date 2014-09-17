@@ -1,0 +1,38 @@
+[
+   {
+      "name":"布外套",
+      "enname":"Cloth Tunic",
+      "defense":1,
+      "image":"images/armors/clothtunic.gif"
+   },
+   {
+      "name":"皮革背心",
+      "enname":"Leather Vest",
+      "defense":3,
+      "image":"images/armors/leathervest.gif"
+   },
+   {
+      "name":"鋼背心",
+      "enname":"Steel Vest",
+      "defense":6,
+      "image":"images/armors/steelvest.gif"
+   },
+   {
+      "name":"鎖子甲",
+      "enname":"Brigandine",
+      "defense":10,
+      "image":"images/armors/brigandine.gif"
+   },
+   {
+      "name":"末日護甲",
+      "enname":"Doom Armor",
+      "defense":15,
+      "image":"images/armors/doomarmor.gif"
+   },
+   {
+      "name":"龍盔甲",
+      "enname":"Dragon Armor",
+      "defense":20,
+      "image":"images/armors/dragonarmor.gif"
+   }
+]

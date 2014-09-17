@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="equipStore">
+<head>
+  <title>AngularJs傳說 - 裝備商店</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body class="container" ng-controller="StoreCtrl">
+  <header class="navbar navbar-default navbar-static-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <span class="navbar-brand">您好, AngularJs 勇者!</span>
+      </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li><a href="#/">Sword</a></li>
+          <li><a href="#/helms">Helm</a></li>
+          <li><a href="#/armors">Armor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Begin Body -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" id="leftCol">
+        <legend> 
+          <label>目前裝備</label>
+          <ul class="list-group">
+            <li class="list-group-item">武器 Weapon：
+              <span class="label label-primary pull-right">{{hero.weapon || '無'}}</span>
+            </li>
+            <li class="list-group-item">頭盔 Helm：
+              <span class="label label-primary pull-right">{{hero.helm || '無'}}</span>
+            </li>
+            <li class="list-group-item">盔甲 Armor：
+              <span class="label label-primary pull-right">{{hero.armor || '無'}}</span>
+            </li>
+          </ul>
+        </legend>
+        <legend> 
+          <label>目前數值</label>
+          <ul class="list-group">
+            <li class="list-group-item">攻擊力 Attack：
+              <span class="label label-primary pull-right">{{hero.attack}}</span>
+            </li>
+            <li class="list-group-item">防禦力 Defense：
+              <span class="label label-primary pull-right">{{hero.defense}}</span>
+            </li>
+          </ul>
+        </legend>
+      </div>
+      <div class="col-md-8">
+        <div ng-view></div>
+      </div>
+    </div>
+    <!-- End Body -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+  </html>

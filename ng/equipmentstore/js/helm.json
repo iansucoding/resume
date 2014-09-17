@@ -1,0 +1,38 @@
+[
+   {
+      "name":"頭巾",
+      "enname":"Bandanna",
+      "defense":1,
+      "image":"images/helms/bandanna.gif"
+   },
+   {
+      "name":"頭罩",
+      "enname":"Quilted Hood",
+      "defense":2,
+      "image":"images/helms/quiltedhood.gif"
+   },
+   {
+      "name":"皮甲頭盔",
+      "enname":"Leather Helm",
+      "defense":4,
+      "image":"images/helms/leatherhelm.gif"
+   },
+   {
+      "name":"鐵盔",
+      "enname":"Iron Cap",
+      "defense":8,
+      "image":"images/helms/ironcap.gif"
+   },
+   {
+      "name":"鋼盔",
+      "enname":"Steel Cap",
+      "defense":16,
+      "image":"images/helms/steelcap.gif"
+   },
+   {
+      "name":"龍頭盔",
+      "enname":"Dragon Helm",
+      "defense":32,
+      "image":"images/helms/dragonhelm.gif"
+   }
+]

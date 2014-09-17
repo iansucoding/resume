@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>頭盔名稱 Helm Name</th>
+      <th>防禦力 Attack</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr ng-repeat="helm in helms">
+  		<td><img ng-src="{{helm.image}}"/></td>
+  		<td>{{helm.name}} {{helm.enname}}</td>
+  		<td>{{helm.defense}}</td>
+  		<td><button ng-click="getHelm(helm.defense,helm.name)">購買 Buy</button></td>
+  	</tr>
+  </tbody>
+</table>
