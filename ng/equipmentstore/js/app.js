@@ -1,132 +1,4 @@
 (function(){
-   var _swords = [  
-   {  
-      "name":"木劍",
-      "enname":"Wood Sword",
-      "attack":1,
-      "image":"images/swords/woodsword.gif"
-   },
-   {  
-      "name":"學徒劍",
-      "enname":"Apprentice Sword",
-      "attack":2,
-      "image":"images/swords/apprenticesword.gif"
-   },
-   {  
-      "name":"彎刀",
-      "enname":"Scimitar",
-      "attack":3,
-      "image":"images/swords/scimitar.gif"
-   },
-   {  
-      "name":"軍刀",
-      "enname":"Sabre",
-      "attack":4,
-      "image":"images/swords/sabre.gif"
-   },
-   {  
-      "name":"寬劍",
-      "enname":"Broad Sword",
-      "attack":8,
-      "image":"images/swords/broadsword.gif"
-   },
-   {  
-      "name":"重劍",
-      "enname":"Bastard Sword",
-      "attack":12,
-      "image":"images/swords/bastardsword.gif"
-   },
-   {  
-      "name":"符文劍",
-      "enname":"Rune Sword",
-      "attack":24,
-      "image":"images/swords/runesword.gif"
-   },
-   {  
-      "name":"屠龍劍",
-      "enname":"Dragon Buster",
-      "attack":32,
-      "image":"images/swords/dragonbuster.gif"
-   }
-   ];
-
-   var _helms = [
-   {
-      "name":"頭巾",
-      "enname":"Bandanna",
-      "defense":1,
-      "image":"images/helms/bandanna.gif"
-   },
-   {
-      "name":"頭罩",
-      "enname":"Quilted Hood",
-      "defense":2,
-      "image":"images/helms/quiltedhood.gif"
-   },
-   {
-      "name":"皮甲頭盔",
-      "enname":"Leather Helm",
-      "defense":4,
-      "image":"images/helms/leatherhelm.gif"
-   },
-   {
-      "name":"鐵盔",
-      "enname":"Iron Cap",
-      "defense":8,
-      "image":"images/helms/ironcap.gif"
-   },
-   {
-      "name":"鋼盔",
-      "enname":"Steel Cap",
-      "defense":16,
-      "image":"images/helms/steelcap.gif"
-   },
-   {
-      "name":"龍頭盔",
-      "enname":"Dragon Helm",
-      "defense":32,
-      "image":"images/helms/dragonhelm.gif"
-   }
-   ]; 
-   var _armors = [
-   {
-      "name":"布外套",
-      "enname":"Cloth Tunic",
-      "defense":1,
-      "image":"images/armors/clothtunic.gif"
-   },
-   {
-      "name":"皮革背心",
-      "enname":"Leather Vest",
-      "defense":3,
-      "image":"images/armors/leathervest.gif"
-   },
-   {
-      "name":"鋼背心",
-      "enname":"Steel Vest",
-      "defense":6,
-      "image":"images/armors/steelvest.gif"
-   },
-   {
-      "name":"鎖子甲",
-      "enname":"Brigandine",
-      "defense":10,
-      "image":"images/armors/brigandine.gif"
-   },
-   {
-      "name":"末日護甲",
-      "enname":"Doom Armor",
-      "defense":15,
-      "image":"images/armors/doomarmor.gif"
-   },
-   {
-      "name":"龍盔甲",
-      "enname":"Dragon Armor",
-      "defense":20,
-      "image":"images/armors/dragonarmor.gif"
-   }
-
-   ];  
    // 主人公
    var _hero = {
       name:"主人公",
@@ -190,8 +62,9 @@
    });
    // 刀劍
    app.controller('SwordCtrl',function($scope,$http){
-      //$scope.swords = $http.get('js/sword.json'); 
-      $scope.swords = _swords;
+      $http.get('js/sword.json').success(function(data){
+         $scope.swords = data;
+      }); 
       $scope.getSword = function(i, name){
          // 往上發送資料讓 $on 接收
          $scope.$emit('getSword', {attack:i,name:name}); // going up!
@@ -199,8 +72,9 @@
    });
    // 頭盔
    app.controller('HelmCtrl',function($scope,$http){
-      //$scope.swords = $http.get('js/helm.json'); 
-      $scope.helms = _helms;
+      $http.get('js/helm.json').success(function(data){
+         $scope.helms = data;
+      });  
       $scope.getHelm = function(i, name){
          // 往上發送資料讓 $on 接收
          $scope.$emit('getHelm', {defense:i,name:name}); // going up!
@@ -208,8 +82,9 @@
    });
    // 盔甲
    app.controller('ArmorCtrl',function($scope,$http){
-      //$scope.armors = $http.get('js/armor.json'); 
-      $scope.armors = _armors;
+      $http.get('js/armor.json').success(function(data){
+         $scope.armors = data;
+      });  
       $scope.getArmor = function(i, name){
          // 往上發送資料讓 $on 接收
          $scope.$emit('getArmor', {defense:i,name:name}); // going up!
