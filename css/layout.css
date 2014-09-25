@@ -1,0 +1,85 @@
+#adzerk_by {
+    display: none;
+}
+/* horiz */
+
+.carbonad {
+    display: block;
+    background: #fdfdfd;
+    background-image: -moz-linear-gradient(top, #f8f8f8, #fdfdfd);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f8f8f8), color-stop(1, #fdfdfd));
+    border: 1px solid #d5d5d5;
+    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 118px;
+    line-height: 15px;
+    overflow: hidden;
+    width: 300px;
+}
+.carbonad-img {
+    border: none;
+    display: inline;
+    float: left;
+    height: 100px;
+    margin: 9px;
+    width: 130px;
+}
+.carbonad-text {
+    display: inline;
+    float: left;
+    width: 142px;
+    padding-top: 13px;
+}
+.carbonad-text a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+.carbonad-tag {
+    float: left;
+    margin-top: 9px;
+    text-align: center;
+    width: 142px;
+    color: #999999;
+}
+.carbonad-tag a {
+    color: #999999;
+    text-decoration: none;
+}
+.imgs {
+    margin: 5px;
+}
+.avatar {
+    width: 130px;
+}
+.page {
+    padding: 12px;
+}
+#p1 {
+    background-color: RGBA(251, 121, 121, 1);
+}
+#p1 .active {
+    background-color: RGBA(219, 107, 113, 1);
+}
+#p2 {
+    background-color: RGBA(191, 201, 115, 1);
+}
+#p2 table thead {
+    background-color: RGBA(0, 83, 37, 1);
+    color: RGBA(165, 199, 167, 1);
+}
+#p2 table tbody td {
+    color: RGBA(0, 83, 37, 1);
+}
+#p3 {
+    background-color: RGBA(0, 180, 209, 1);
+    color: RGBA(0, 60, 122, 1);
+}
+#p3 hr {
+    border: 0;
+    height: 1px;
+    background-color: RGBA(162, 221, 229, 1);
+}
+#p4 {
+    background-color: RGBA(246, 191, 90, 1)
+}

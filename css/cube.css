@@ -1,0 +1,71 @@
+.scene {
+    width: 150px;
+    height: 150px;
+    -webkit-perspective: 600;
+    margin: 20px auto;
+    /* center the cube */
+}
+.cube {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: rolling 3s infinite linear;
+}
+.cube-face {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    opacity: 0.5;
+}
+/* 定義一個3D translation (x,y,z)，
+                為了讓front face比較靠近自己的眼睛，我們將她的Z軸上做轉換。 
+        */
+
+.cube-face-front {
+    background-color: yellow;
+    /* 為了方便查看六面，先隨便給六個面不同顏色 */
+    -webkit-transform: translate3d(0, 0, 75px);
+}
+/* 背面為正面的相對面，所以側面轉180度，
+                 側轉180度的translate3d(0, 0, 75px)會像z軸減75px，因為z軸的方向等於元素面對的方向 
+        */
+
+.cube-face-back {
+    background-color: red;
+    -webkit-transform: rotateY(180deg) translate3d(0, 0, 75px);
+}
+/* 左面為正面逆向側轉90度(rotateY預設為向右轉)，因為z軸的方向等於元素面對的方向，
+       所以面對左邊的元素，z軸的方向也是向左，看起來就像元素向左移動了75px 
+        */
+
+.cube-face-left {
+    background-color: green;
+    -webkit-transform: rotateY(-90deg) translate3d(0, 0, 75px);
+}
+/* 右面 */
+
+.cube-face-right {
+    background-color: blue;
+    -webkit-transform: rotateY(90deg) translate3d(0, 0, 75px);
+}
+/* 上面 */
+
+.cube-face-top {
+    background-color: orange;
+    -webkit-transform: rotateX(90deg) translate3d(0, 0, 75px);
+}
+/* 下面 */
+
+.cube-face-bottom {
+    background-color: black;
+    transform: rotateX(-90deg) translate3d(0, 0, 75px);
+}
+@-webkit-keyframes rolling {
+    from {
+        -webkit-transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
