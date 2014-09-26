@@ -55,6 +55,16 @@
 body{
     font-family:蘋果儷中黑 , 微軟正黑體 , 'Microsoft JhengHei', 'Apple LiGothic Medium', 黑體-繁, 'Heiti TC Light', Arial, sans-serif;
     font-size:18px;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 .page {
     padding: 12px;
