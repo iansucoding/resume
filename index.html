@@ -48,19 +48,20 @@
 <body>
     <div id="fb-root"></div>
     <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=667293773328019";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=667293773328019";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
     <div class="bs-header" id="content">
         <div class="container">
             <h1>蘇百彥 Ian Su</h1>
-            <p>含個人介紹，網站設計相關工作經歷，自傳及成果簡報。
+            <p>
+                含個人介紹，網站設計相關工作經歷，自傳及成果簡報。
                 <br />
                 <small>(Bootstrap版面/RWD響應式網頁)</small>
             </p>
@@ -81,7 +82,7 @@
                             <a href="#p2" class="links">相關工作經歷</a>
                         </li>
                         <li class="">
-                            <a href="#p3" class="links">自傳</a>
+                            <a href="#p3" class="links">技能</a>
                         </li>
                         <li class="">
                             <a href="#p4" class="links">成果簡報</a>
@@ -91,14 +92,12 @@
             </div>
             <div class="col-md-9" role="main">
                 <div class="page" id="p1">
-                    <h1 class="text-danger">個人介紹
-                        <small>ABOUT</small>
-                    </h1>
+                    <h1 class="text-danger"><span class="glyphicon glyphicon-user"></span> About</h1>
                     <table class="table table-bordered" style="font-size: 18px;">
                         <tr>
                             <th class="active">照片</th>
                             <td>
-                                <img src="img/avatar03.jpg" alt="" class="img-thumbnail avatar" />
+                                <img src="img/avatar.jpg" alt="" class="img-thumbnail avatar" />
                             </td>
                         </tr>
                         <tr>
@@ -124,106 +123,106 @@
                     </table>
                 </div>
                 <div class="page" id="p2">
-                    <h1 class="text-success">網站設計相關工作經歷
-                        <small>EXPERIENCE OF WEB DESIGN</small>
-                    </h1>
-                    <table class="table table-bordered" style="font-size: 18px;">
-                        <thead>
-                            <tr>
-                                <th>公司</th>
-                                <th>職務</th>
-                                <th>工作內容</th>
-                                <th>使用技術</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>啟耀光電</td>
-                                <td>MES程式設計</td>
-                                <td>
+                    <h1 class="text-success"><span class="glyphicon glyphicon-pencil"></span> EXPERIENCE</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">啟耀光電</h3>
+                                </div>
+                                <div class="panel-body">
                                     <ul>
-                                        <li>生產管理系統</li>
-                                        <li>電子表單簽核系統</li>
-                                        <li>良率資訊報表</li>
-                                        <li>倉庫管理系統</li>
-                                        <li>實驗室資訊管理系統</li>
+                                        <li>MES程式設計助理</li>
+                                        <li>2007／01～2010／03</li>
+                                        <li>建立生產管理資訊系統(MES)</li>
+                                        <li>建立內部電子表單簽核系統</li>
                                     </ul>
-                                </td>
-                                <td>
+                                   
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">大心數位(多奇數位)</h3>
+                                </div>
+                                <div class="panel-body">
                                     <ul>
-                                        <li>ASP</li>
-                                        <li>ASP.NET WebForm(VB.NET)</li>
-                                        <li>JavaScript</li>
-                                        <li>jQuery</li>
-                                        <li>CSS</li>
-                                        <li>MSSQL</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>大心數位(多奇數位)</td>
-                                <td>網站程式設計</td>
-                                <td>
-                                    <ul>
+                                        <li>網站程式設計師</li>
+                                        <li>2012／11～仍在職</li>
                                         <li>商業活動網站</li>
                                         <li>社群網站</li>
                                         <li>Web API</li>
                                     </ul>
-                                </td>
-                                <td>
-                                    <ul>
-                                        <li>ASP.NET MVC(C#)</li>
-                                        <li>Entity Framework</li>
-                                        <li>Linq</li>
-                                        <li>JavaScript</li>
-                                        <li>jQuery</li>
-                                        <li>HTML5</li>
-                                        <li>CSS3</li>
-                                        <li>MSSQL</li>
-                                        <li>Facebook API</li>
-                                        <li>SignalR</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="page" id="p3">
-                    <h1 class="text-info">自傳
-                        <small>AUTOBIOGRAPHY</small>
-                    </h1>
-                    <article style="font-size:18px;">
-
-                        <p>我叫蘇百彥，母親是家庭主婦，家中共有兄弟三人，我是長兄，有兩位弟弟。</p>
-
-                        <p>二專時就讀電子科計算機組，專題為微電腦程式控制，利用電腦程式讓家電產品具有人工智慧，依照環境或時間的改變而轉變內部的功能；二技時就讀資管系，專題為應用基因演算法重建侏儸紀世界，此為六人一組，我負責做FLASH動畫導覽，專題讓我不僅學到了新技能，也讓我了解到團體合作、小組分工的重要。大學時曾經擔任社團社長管理帶領社團並參加許多表演，也當任各高中職的社團指導老師；畢業後在當兵之前曾到統一企業打工並指導其他工讀生；與人熟識之後活潑開朗，因此也當任過學藝與康樂股長。</p>
-
-                        <p>退伍後嘗試不同類型的工作，最後在程式設計上找到熱誠；第一份程式設計相關的工作為MES程式設計助理，使用ASP/ASP.NET/MS SQL替公司建置內部管理系統系統，例如MES生產管理、倉庫管理系統、人力工時管理，良率圖表、實驗室資訊；撰寫時需要與使用者溝通撰寫內容，以使用者的的角度撰寫人性化的操作介面，替公司將紙本作業方式導入至資訊系統管理方式；使用者透過自己撰寫的程式而提升在工作上效率，讓我在工作上更充滿熱情。</p>
-
-                        <p>在現實與夢想之間抉擇了許久之後，我下定決心獨自一人到澳洲度假打工，所有事情都自己解決，兩年的時間我擁有了不只是豐富的人生經驗，也增進了各種解決問題的能與並擁有了更積極樂觀的工作態度；回台灣即曾到台北工作，因為需要照顧家人所以決定回南部打拼事業。</p>
-
-                        <p>目前為網站程式設計師，使用ASP.NET MVC/MS SQL建置網站，編寫後端的C#程式與前端的JavaScript網頁程式和HTML5/CSS3版面設計，我喜歡不斷學習件新技能，時常上國外網站閱讀技術文章並運用在工作上來達到客戶提出的要求，例如研究facebook api的應用，CSS3/Canvas特效與3D動畫，JavaScript的框架jQuery/AngularJS；建構網站時與客戶溝通需求內容並將結果呈現出來時，讓我對網站程式設計更加充滿熱情。</p>
-                    </article>
-                    <hr />
-                    <article style="font-size:18px;">
-                        <p>My name is Ian Su.I was born in Tainan, There are 4 people in my family.</p>
-
-                        <p>when I was a student in college, I Majored in IT and electronic, I did two projects, the first one is ”control by microcomputer program”, i done it by myself, another one is ”rebuild Jurassic by genetic algorithm”, I done it with other 5 teammates, I wasn't only got the knowledge but also got the skill that how to work in a team; I used to be a college club leader and high school club teacher, to teach and lead a group of people that make me to learn how to manage.</p>
-
-                        <p>I've done a lot of different types of work after discharging from military services, then found the passion in programming, My first programming job is built a MES and office system by ASP/ASP.NET(VB.NET)MS SQL in a electronics corp, and then I made a big decision in my life, went to Australia for working holiday for two years by myself, then I went back to Taiwan with wonderful experienced and better attitude.</p>
-
-                        <p>I am a web programmer in a website design company, creating websites by ASP.NET MVC(C#)/MS SQL</p>
-                    </article>
+                    <h1 class="text-info"><span class="glyphicon glyphicon-wrench"></span> SKILL</h1>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">FRONT-END</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>JQuery</li>
+                                <li>AngularJs</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>Facebook API</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">BACK-END</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>ASP.NET MVC</li>
+                                <li>C#</li>
+                                <li>Linq</li>
+                                <li>Entity Framework</li>
+                                <li>T-SQL</li>
+                                <li>SignalR</li>
+                                <li class="text-muted">ASP.NET WebForm</li>
+                                <li class="text-muted">VB.NET</li>
+                                <li class="text-muted">ASP</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TOOL</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>Visual Studio</li>
+                                <li>MSSQL</li>
+                                <li>Git</li>
+                                <li>Sublime</li>
+                                <li class ="text-muted">SVN</li>
+                                <li class="text-muted">TFS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="bg-info">備註 : 灰色字體表示久未使用</p>
                 </div>
                 <div class="page" id="p4">
-                    <h1 class="text-warning">成果簡報
-                        <small>REPORT</small>
-                    </h1>
-                    <p><a href="http://ianworkshop.blogspot.tw/">學習網站設計的筆記(Blog)</a>
+                    <h1 class="text-warning"><span class="glyphicon glyphicon-floppy-disk"></span> REPORT</h1>
+                    <p>
+                        <a href="http://ianworkshop.blogspot.tw/">學習網站設計的筆記(Blog)</a>
                     </p>
-                    <p><a href="ng/equipmentstore/index.html">AngularJs商店</a>
+                    <p>
+                        <a href="ng/equipmentstore/index.html">AngularJs商店</a>
                     </p>
-                    <p><a href="http://www.moviecaker.com/">建構中的電影社群網站</a>
+                    <p>
+                        <a href="http://www.moviecaker.com/">建構中的電影社群網站</a>
                     </p>
                     <a class="fancybox" rel="group" href="img/home.png" caption="首頁">
                         <img src="img/home.png" style="width: 200px;" title="首頁" class="imgs img-thumbnail" />
