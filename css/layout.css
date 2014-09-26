@@ -61,6 +61,7 @@ body{
 }
 #p1 {
     background-color: RGBA(251, 121, 121, 1);
+    overflow:hidden;
 }
 #p1 .active {
     background-color: RGBA(219, 107, 113, 1);
