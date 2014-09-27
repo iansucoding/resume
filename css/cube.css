@@ -69,3 +69,7 @@
         -webkit-transform: rotateY(360deg);
     }
 }
+/* 額外增加 */
+.cube-face-inner{
+    margin: 25%;
+}
