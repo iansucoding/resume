@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section style{
+    <style>
+        #album-list {
+        }
+
+            #album-list li {
+                
+            }
+
+                #album-list li img {
+                    width:50px;
+                }
+    </style>
+}
+<div class="row">
+    <div class="col-md-4">
+        @{Html.RenderAction("GenreMenu", "Store");}
+    </div>
+    <div class="col-md-4">
+        <div class="alert alert-success" role="alert"><h3><em>Fresh</em> off the grill</h3></div>
+        <ul id="album-list">
+            @foreach (var album in Model)
+            {
+                <li>
+                    <a href="@Url.Action("Detail", "Store",new { id = album.AlbumId })">
+                        <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                        <br />
+                        <span>@album.Title</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+

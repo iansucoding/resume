@@ -1,0 +1,7 @@
+﻿@model IEnumerable<AspNetMVCMusicStore.Models.Genre>
+<ul id="categories" class="list-group">
+    @foreach (var genre in Model)
+    {
+        <li class="list-group-item">@Html.ActionLink(genre.Name, "Browse", "Store", new { Genre = genre.Name }, null)</li>
+    }
+</ul>
