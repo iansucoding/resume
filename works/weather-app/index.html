@@ -29,37 +29,38 @@
             height: 100px;
         }
 
-        .weather-row {
+        .weather-list {
             margin-top: 10px;
             border-radius: 5px;
         }
 
-            .weather-row:nth-child(2) {
-                background-color: #2ecc71;
-            }
 
-            .weather-row:nth-child(3) {
+            .weather-list:nth-child(3) {
                 background-color: #3498db;
             }
 
-            .weather-row:nth-child(4) {
+            .weather-list:nth-child(4) {
                 background-color: #9b59b6;
             }
 
-            .weather-row:nth-child(5) {
+            .weather-list:nth-child(5) {
                 background-color: #f1c40f;
             }
 
-            .weather-row:nth-child(6) {
+            .weather-list:nth-child(6) {
                 background-color: #e74c3c;
             }
 
-            .weather-row:nth-child(7) {
+            .weather-list:nth-child(7) {
                 background-color: #e67e22;
             }
 
-            .weather-row:nth-child(8) {
+            .weather-list:nth-child(8) {
                 background-color: #95a5a6;
+            }
+
+            .weather-list:nth-child(9) {
+                background-color: #2ecc71;
             }
     </style>
 </head>
@@ -78,7 +79,7 @@
             </div>
         </div>
         <span ng-hide="isLoaded">載入中....</span>
-        <div ng-repeat="wi in localWeather.Wx.time" class="row weather-row">
+        <div ng-repeat="wi in localWeather.Wx.time" class="row weather-list">
             <div class="col-md-4">
                 <h3>{{wi.startDateTime | date:'EEEE'}}</h3>
                 <p>{{wi.startDateTime | date:'MMMM d, y'}}</p>
@@ -100,7 +101,7 @@
                 ifrJsonString,
                 weatherJson = {}
             // 取 iframe 中的 json 字串, 並轉換成 json 物件後取其中的資料
-            factory.getWeatherAction = function(){
+            factory.getWeatherAction = function () {
                 ifrBody = ifrBody || ifrDocument.body;
                 if (ifrBody) {
                     ifrCode = ifrCode || ifrBody.getElementsByTagName('code')[0];
@@ -141,10 +142,11 @@
             function loadWeather() {
                 $scope.weatherArray = weatherFactory.getWeatherAction() || [];
                 //console.log('get....'); console.log($scope.weatherArray);
-                if ($scope.weatherArray.length>0) {
+                if ($scope.weatherArray.length > 0) {
                     getLocalWeather();
                     getLocation();
                     $scope.isLoaded = !$scope.isLoaded;
+                    $scope.$apply();
                 } else {
                     _timerGetValue = setInterval(loadWeatherAgain, 1000);
                 }
@@ -158,7 +160,7 @@
                     getLocalWeather();
                     getLocation();
                     $scope.isLoaded = !$scope.isLoaded;
-                    alert('done!!!!' + $scope.isLoaded);
+                    $scope.$apply();
                 }
             }
             // 取得指定地區的天氣資料
@@ -214,6 +216,8 @@
                 $scope.locationName = loco;
                 getLocalWeather();
             };
+
+            // -------------------
         });
     </script>
 </body>
