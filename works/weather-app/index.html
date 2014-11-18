@@ -96,16 +96,20 @@
             var factory = [],
                 ifrDocument = document.getElementById("wi_frame").contentDocument,
                 ifrBody,
+                ifrCode,
                 ifrJsonString,
                 weatherJson = {}
             // 取 iframe 中的 json 字串, 並轉換成 json 物件後取其中的資料
             factory.getWeatherAction = function(){
                 ifrBody = ifrBody || ifrDocument.body;
                 if (ifrBody) {
-                    ifrJsonString = ifrJsonString || ifrBody.getElementsByTagName('code')[0].innerHTML
-                    if (ifrJsonString) {
-                        weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
-                        return weatherJson.fifowml.data.location; // 天氣資料
+                    ifrCode = ifrCode || ifrBody.getElementsByTagName('code')[0];
+                    if (ifrCode) {
+                        ifrJsonString = ifrJsonString || ifrCode.innerHTML
+                        if (ifrJsonString) {
+                            weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                            return weatherJson.fifowml.data.location; // 天氣資料
+                        }
                     }
                 }
             }
@@ -159,7 +163,7 @@
             }
             // 取得指定地區的天氣資料
             function getLocalWeather() {
-                console.log('getLocalWeather....');
+                //console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
                     if (element.name === $scope.locationName) {
                         $scope.localWeather = element['weather-elements'];
