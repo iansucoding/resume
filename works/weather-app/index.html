@@ -77,27 +77,37 @@
                 </ul>
             </div>
         </div>
+        <span ng-hide="isLoaded">載入中....</span>
         <div ng-repeat="wi in localWeather.Wx.time" class="row weather-row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-4">
                 <h3>{{wi.startDateTime | date:'EEEE'}}</h3>
                 <p>{{wi.startDateTime | date:'MMMM d, y'}}</p>
             </div>
-            <div class="col-md-4 text-center"><i class="wi " ng-class="wi.icon"></i>{{wi.text}}</div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4"><i class="wi " ng-class="wi.icon"></i>{{wi.text}}</div>
+            <div class="col-md-4">
                 <h1>{{wi.MinT}} ~ {{wi.MaxT}}</h1>
             </div>
         </div>
-
     </div>
+    <iframe src="weatherxml.html" id="wi_frame" ng-hide="true"></iframe>
     <script>
-        var app = angular.module('WeatherApp', ['ui.bootstrap']).config(function ($httpProvider) {
-            delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        });
+        var app = angular.module('WeatherApp', ['ui.bootstrap']);
         app.factory('weatherFactory', function ($http) {
-            var factory = [];
-
-            factory.getWeather = function () {
-                return $http.get('http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml');
+            var factory = [],
+                ifrDocument = document.getElementById("wi_frame").contentDocument,
+                ifrBody,
+                ifrJsonString,
+                weatherJson = {}
+            // 取 iframe 中的 json 字串, 並轉換成 json 物件後取其中的資料
+            factory.getWeatherAction = function(){
+                ifrBody = ifrBody || ifrDocument.body;
+                if (ifrBody) {
+                    ifrJsonString = ifrJsonString || ifrBody.getElementsByTagName('code')[0].innerHTML
+                    if (ifrJsonString) {
+                        weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                        return weatherJson.fifowml.data.location; // 天氣資料
+                    }
+                }
             }
             // 天氣 icon
             // http://erikflowers.github.io/weather-icons/cheatsheet/
@@ -116,29 +126,46 @@
             return factory;
         });
         app.controller('WeatherCtrl', function ($scope, $http, weatherFactory) {
+            var _timerGetValue;
+            $scope.title = '七天天氣預報';
             $scope.weatherArray = [];
             $scope.locationName = '臺北市';
             $scope.localWeather = {};
             $scope.locations = [];
+            $scope.isLoaded = false;
             loadWeather();
             function loadWeather() {
-                weatherFactory.getWeather().success(function (data) {
-                    weatherData = x2js.xml_str2json(data);
-                    //console.log(xxx = weatherData.fifowml.data.location);
-                    $scope.weatherArray = weatherData.fifowml.data.location;
-                    $scope.title = weatherData.fifowml.head.product.title; // 標題 : 七天天氣預報
-                    //console.log(weatherData.fifowml.head.product.title);
+                $scope.weatherArray = weatherFactory.getWeatherAction() || [];
+                //console.log('get....'); console.log($scope.weatherArray);
+                if ($scope.weatherArray.length>0) {
                     getLocalWeather();
                     getLocation();
-                });
+                    $scope.isLoaded = !$scope.isLoaded;
+                } else {
+                    _timerGetValue = setInterval(loadWeatherAgain, 1000);
+                }
             }
-
+            function loadWeatherAgain() {
+                $scope.weatherArray = weatherFactory.getWeatherAction() || [];
+                //console.log('get....'); console.log($scope.weatherArray);
+                if ($scope.weatherArray.length > 0) {
+                    clearInterval(_timerGetValue);
+                    //console.log('done....');
+                    getLocalWeather();
+                    getLocation();
+                    $scope.isLoaded = !$scope.isLoaded;
+                    // alert('done!!!!' + $scope.isLoaded);
+                }
+            }
             // 取得指定地區的天氣資料
             function getLocalWeather() {
+                console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
                     if (element.name === $scope.locationName) {
                         $scope.localWeather = element['weather-elements'];
                         var length1 = $scope.localWeather.Wx.time.length, length2 = weatherFactory.icons.length;
+                        //console.log('length1....' + length1);
+                        //console.log('length2....' + length2);
                         for (var i = 0; i < length1; i++) { // 天氣迴圈
                             $scope.localWeather.Wx.time[i].startDateTime = new Date($scope.localWeather.Wx.time[i]._start); // 日期
                             $scope.localWeather.Wx.time[i].MaxT = $scope.localWeather.MaxT.time[i].value.__text; // 最高溫
@@ -151,10 +178,11 @@
                             }
 
                         }
-                        console.log(xxx = $scope.localWeather.MaxT.time[0]);
+                        //console.log(xxx = $scope.localWeather.MaxT.time[0]);
                         return false;
                     }
                 });
+                //console.log($scope.localWeather.Wx.time[i].icon);
             }
             // 取得地區
             function getLocation() {
