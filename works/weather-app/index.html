@@ -90,7 +90,9 @@
 
     </div>
     <script>
-        var app = angular.module('WeatherApp', ['ui.bootstrap']);
+        var app = angular.module('WeatherApp', ['ui.bootstrap']).config(function ($httpProvider) {
+            delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        });
         app.factory('weatherFactory', function ($http) {
             var factory = [];
 
