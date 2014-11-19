@@ -109,6 +109,7 @@
                         ifrJsonString = ifrJsonString || ifrCode.innerHTML
                         if (ifrJsonString) {
                             weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                            console.log('got..... weatherJson'); console.log(weatherJson);
                             return weatherJson.fifowml.data.location; // 天氣資料
                         }
                     }
