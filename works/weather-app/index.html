@@ -106,6 +106,7 @@
                 try {
                     var doc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
                     console.log(doc.body.innerHTML);
+                    console.log(doc);
                 }
                 catch (e) {
                     console.log(e.message);
@@ -167,6 +168,7 @@
                     $scope.$apply();
                 } else {
                     _timerGetValue = setInterval(loadWeatherAgain, 1000);
+                    clearInterval(_timerGetValue);
                 }
             }
             function loadWeatherAgain() {
