@@ -110,7 +110,7 @@
                     if (ifrCode) {
                         ifrJsonString = ifrCode.innerHTML;
                         if (ifrJsonString) {
-                            console.log(ifrJsonString);
+                            // console.log(ifrJsonString);
                             weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
                             return weatherJson.fifowml.data.location; // 天氣資料 
                         }
@@ -118,23 +118,6 @@
                     }
 
                 }
-
-                //ifrDocument = document.getElementById("wi_frame").contentDocument || document.getElementById("wi_frame").contentWindow
-                //if (ifrDocument) {
-                //    ifrBody = ifrBody || ifrDocument.body;
-                //    if (ifrBody) {
-                //        ifrCode = ifrCode || ifrBody.getElementsByTagName('code')[0];
-                //        if (ifrCode) {
-                //            ifrJsonString = ifrJsonString || ifrCode.innerHTML
-                //            if (ifrJsonString) {
-                //                weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
-                //                console.log('got..... weatherJson'); console.log(weatherJson);
-                //                return weatherJson.fifowml.data.location; // 天氣資料
-                //            }
-                //        }
-                //    }
-                //}
-
             }
             // 天氣 icon
             // http://erikflowers.github.io/weather-icons/cheatsheet/
