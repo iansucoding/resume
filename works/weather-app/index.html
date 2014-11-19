@@ -95,25 +95,29 @@
         var app = angular.module('WeatherApp', ['ui.bootstrap']);
         app.factory('weatherFactory', function ($http) {
             var factory = [],
-                ifrDocument = document.getElementById("wi_frame").contentDocument,
+                ifrDocument,
                 ifrBody,
                 ifrCode,
                 ifrJsonString,
                 weatherJson = {}
             // 取 iframe 中的 json 字串, 並轉換成 json 物件後取其中的資料
             factory.getWeatherAction = function () {
-                ifrBody = ifrBody || ifrDocument.body;
-                if (ifrBody) {
-                    ifrCode = ifrCode || ifrBody.getElementsByTagName('code')[0];
-                    if (ifrCode) {
-                        ifrJsonString = ifrJsonString || ifrCode.innerHTML
-                        if (ifrJsonString) {
-                            weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
-                            console.log('got..... weatherJson'); console.log(weatherJson);
-                            return weatherJson.fifowml.data.location; // 天氣資料
+                ifrDocument = document.getElementById("wi_frame").contentDocument || document.getElementById("wi_frame").contentWindow
+                if (ifrDocument) {
+                    ifrBody = ifrBody || ifrDocument.body;
+                    if (ifrBody) {
+                        ifrCode = ifrCode || ifrBody.getElementsByTagName('code')[0];
+                        if (ifrCode) {
+                            ifrJsonString = ifrJsonString || ifrCode.innerHTML
+                            if (ifrJsonString) {
+                                weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                                console.log('got..... weatherJson'); console.log(weatherJson);
+                                return weatherJson.fifowml.data.location; // 天氣資料
+                            }
                         }
                     }
                 }
+
             }
             // 天氣 icon
             // http://erikflowers.github.io/weather-icons/cheatsheet/
