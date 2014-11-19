@@ -95,6 +95,7 @@
         var app = angular.module('WeatherApp', ['ui.bootstrap']);
         app.factory('weatherFactory', function ($http) {
             var factory = [],
+                ifr,
                 ifrDocument,
                 ifrBody,
                 ifrCode,
@@ -102,19 +103,21 @@
                 weatherJson = {}
             // 取 iframe 中的 json 字串, 並轉換成 json 物件後取其中的資料
             factory.getWeatherAction = function () {
-                var iframe = document.getElementById('wi_frame');
-                try {
-                    var doc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
-                    console.log(doc.body.innerHTML);
-                    console.log(doc);
+                ifr = document.getElementById('wi_frame');
+                ifrDocument = ifr.contentDocument ? ifr.contentDocument : ifr.contentWindow.document;
+                if (ifrDocument) {
+                    ifrCode = ifrDocument.getElementById('jsoncode');
+                    if (ifrCode) {
+                        ifrJsonString = ifrCode.innerHTML;
+                        if (ifrJsonString) {
+                            console.log(ifrJsonString);
+                            weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                            return weatherJson.fifowml.data.location; // 天氣資料 
+                        }
+
+                    }
+
                 }
-                catch (e) {
-                    console.log(e.message);
-                }
-                return false;
-
-
-
 
                 //ifrDocument = document.getElementById("wi_frame").contentDocument || document.getElementById("wi_frame").contentWindow
                 //if (ifrDocument) {
@@ -168,7 +171,6 @@
                     $scope.$apply();
                 } else {
                     _timerGetValue = setInterval(loadWeatherAgain, 1000);
-                    clearInterval(_timerGetValue);
                 }
             }
             function loadWeatherAgain() {
