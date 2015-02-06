@@ -177,17 +177,18 @@
                 //console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
                     if (element.name === $scope.locationName) {
-                        $scope.localWeather = element['weather-elements'];
-                        var length1 = $scope.localWeather.Wx.time.length, length2 = weatherFactory.icons.length;
+                        $scope.localWeather = element['weatherElement'];
+                        var length1 = $scope.localWeather[0].time.length, // Wx
+                            length2 = weatherFactory.icons.length;
                         //console.log('length1....' + length1);
                         //console.log('length2....' + length2);
                         for (var i = 0; i < length1; i++) { // 天氣迴圈
-                            $scope.localWeather.Wx.time[i].startDateTime = new Date($scope.localWeather.Wx.time[i]._start); // 日期
-                            $scope.localWeather.Wx.time[i].MaxT = $scope.localWeather.MaxT.time[i].value.__text; // 最高溫
-                            $scope.localWeather.Wx.time[i].MinT = $scope.localWeather.MinT.time[i].value.__text // 最低溫
+                            $scope.localWeather[0].time[i].startDateTime = new Date($scope.localWeather[0].time[i].startTime); // 日期
+                            $scope.localWeather[0].time[i].MaxT = $scope.localWeather[1].time[i].startTime; // 最高溫
+                            $scope.localWeather[0].time[i].MinT = $scope.localWeather[2].time[i].startTime; // 最低溫
                             for (var j = 0; j < length2; j++) {  // icon 迴圈
-                                if (weatherFactory.icons[j].name === $scope.localWeather.Wx.time[i].text) {
-                                    $scope.localWeather.Wx.time[i].icon = weatherFactory.icons[j].icon;
+                                if (weatherFactory.icons[j].name === $scope.localWeather[0].time[i].parameter.parameterName) {
+                                    $scope.localWeather[0].time[i].icon = weatherFactory.icons[j].icon;
                                     break;
                                 }
                             }
@@ -203,7 +204,7 @@
             function getLocation() {
                 var length = $scope.weatherArray.length;
                 for (var i = 0; i < length; i++) {
-                    $scope.locations.push($scope.weatherArray[i].name);
+                    $scope.locations.push($scope.weatherArray[i].locationName);
                 }
             }
             // 地區下拉選單
