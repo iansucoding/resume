@@ -165,7 +165,6 @@
                 if ($scope.weatherArray.length > 0) {
                     clearInterval(_timerGetValue);
                     //console.log('done....');
-                    debugger;
                     getLocalWeather();
                     getLocation();
                     $scope.isLoaded = !$scope.isLoaded;
@@ -177,7 +176,7 @@
                 //console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
                     if (element.locationName === $scope.locationName) {
-
+                    	debugger;
                         $scope.localWeather = element['weatherElement'];
                         var length1 = $scope.localWeather[0].time.length, // Wx
                             length2 = weatherFactory.icons.length;
