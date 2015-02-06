@@ -149,7 +149,7 @@
             loadWeather();
             function loadWeather() {
                 $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                console.log('get....'); console.log($scope.weatherArray);
+                //console.log('get....'); console.log($scope.weatherArray);
                 if ($scope.weatherArray.length > 0) {
                     getLocalWeather();
                     getLocation();
@@ -161,7 +161,7 @@
             }
             function loadWeatherAgain() {
                 $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                console.log('get again....'); console.log($scope.weatherArray);
+                //console.log('get again....'); console.log($scope.weatherArray);
                 if ($scope.weatherArray.length > 0) {
                     clearInterval(_timerGetValue);
                     //console.log('done....');
@@ -176,8 +176,8 @@
             function getLocalWeather() {
                 //console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
-                    if (element.name === $scope.locationName) {
-                    	debugger;
+                    if (element.locationName === $scope.locationName) {
+
                         $scope.localWeather = element['weatherElement'];
                         var length1 = $scope.localWeather[0].time.length, // Wx
                             length2 = weatherFactory.icons.length;
