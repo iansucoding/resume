@@ -110,8 +110,9 @@
                     if (ifrCode) {
                         ifrJsonString = ifrCode.innerHTML;
                         if (ifrJsonString) {
-                            // console.log(ifrJsonString);
+                            console.log(ifrJsonString);
                             weatherJson = JSON.parse(ifrJsonString); // 轉成 json 物件
+                            debugger;
                             return weatherJson.fifowml.data.location; // 天氣資料 
                         }
 
