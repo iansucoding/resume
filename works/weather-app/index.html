@@ -161,7 +161,7 @@
             }
             function loadWeatherAgain() {
                 $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                //console.log('get....'); console.log($scope.weatherArray);
+                console.log('get again....'); console.log($scope.weatherArray);
                 if ($scope.weatherArray.length > 0) {
                     clearInterval(_timerGetValue);
                     //console.log('done....');
