@@ -177,6 +177,7 @@
                 //console.log('getLocalWeather....');
                 $scope.weatherArray.forEach(function (element, index) {
                     if (element.name === $scope.locationName) {
+                    	debugger;
                         $scope.localWeather = element['weatherElement'];
                         var length1 = $scope.localWeather[0].time.length, // Wx
                             length2 = weatherFactory.icons.length;
