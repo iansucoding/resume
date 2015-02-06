@@ -184,8 +184,8 @@
                         //console.log('length2....' + length2);
                         for (var i = 0; i < length1; i++) { // 天氣迴圈
                             $scope.localWeather[0].time[i].startDateTime = new Date($scope.localWeather[0].time[i].startTime); // 日期
-                            $scope.localWeather[0].time[i].MaxT = $scope.localWeather[1].time[i].startTime; // 最高溫
-                            $scope.localWeather[0].time[i].MinT = $scope.localWeather[2].time[i].startTime; // 最低溫
+                            $scope.localWeather[0].time[i].MaxT = $scope.localWeather[1].time[i].parameter.parameterName; // 最高溫
+                            $scope.localWeather[0].time[i].MinT = $scope.localWeather[2].time[i].parameter.parameterName; // 最低溫
                             for (var j = 0; j < length2; j++) {  // icon 迴圈
                                 if (weatherFactory.icons[j].name === $scope.localWeather[0].time[i].parameter.parameterName) {
                                     $scope.localWeather[0].time[i].icon = weatherFactory.icons[j].icon;
