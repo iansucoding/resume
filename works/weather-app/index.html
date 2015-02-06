@@ -79,7 +79,7 @@
             </div>
         </div>
         <span ng-hide="isLoaded">載入中....</span>
-        <div ng-repeat="wi in localWeather.Wx.time" class="row weather-list">
+        <div ng-repeat="wi in localWeather[0].time" class="row weather-list">
             <div class="col-md-4">
                 <h3>{{wi.startDateTime | date:'EEEE'}}</h3>
                 <p>{{wi.startDateTime | date:'MMMM d, y'}}</p>
