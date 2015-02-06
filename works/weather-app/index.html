@@ -149,7 +149,7 @@
             loadWeather();
             function loadWeather() {
                 $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                //console.log('get....'); console.log($scope.weatherArray);
+                console.log('get....'); console.log($scope.weatherArray);
                 if ($scope.weatherArray.length > 0) {
                     getLocalWeather();
                     getLocation();
