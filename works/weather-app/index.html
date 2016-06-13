@@ -15,7 +15,7 @@
     <![endif]-->
     <!-- include the weather icons: weather-icons-min.css -->
     <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
-
+    <script src="../../js/xml2json.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
     <script type="text/javascript" src="http://demos.amitavroy.com/learningci/assets/js/xml2json.js" charset="UTF-8"></script>
@@ -138,7 +138,7 @@
             ];
             return factory;
         });
-        app.controller('WeatherCtrl', function ($scope, $http, weatherFactory) {
+        app.controller('WeatherCtrl', function ($scope, $http) {
             var _timerGetValue;
             $scope.title = '七天天氣預報';
             $scope.weatherArray = [];
@@ -146,31 +146,38 @@
             $scope.localWeather = {};
             $scope.locations = [];
             $scope.isLoaded = false;
-            loadWeather();
-            function loadWeather() {
-                $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                //console.log('get....'); console.log($scope.weatherArray);
-                if ($scope.weatherArray.length > 0) {
-                    getLocalWeather();
-                    getLocation();
-                    $scope.isLoaded = !$scope.isLoaded;
-                    $scope.$apply();
-                } else {
-                    _timerGetValue = setInterval(loadWeatherAgain, 1000);
-                }
-            }
-            function loadWeatherAgain() {
-                $scope.weatherArray = weatherFactory.getWeatherAction() || [];
-                //console.log('get again....'); console.log($scope.weatherArray);
-                if ($scope.weatherArray.length > 0) {
-                    clearInterval(_timerGetValue);
-                    //console.log('done....');
-                    getLocalWeather();
-                    getLocation();
-                    $scope.isLoaded = !$scope.isLoaded;
-                    $scope.$apply();
-                }
-            }
+
+            $http.get('http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml').success(function(data){
+                console.log(data);
+                $scope.isLoaded = !$scope.isLoaded;
+                $scope.weatherArray = xml2json(data);
+                
+            });
+            //loadWeather();
+            // function loadWeather() {
+            //     $scope.weatherArray = weatherFactory.getWeatherAction() || [];
+            //     //console.log('get....'); console.log($scope.weatherArray);
+            //     if ($scope.weatherArray.length > 0) {
+            //         getLocalWeather();
+            //         getLocation();
+            //         $scope.isLoaded = !$scope.isLoaded;
+            //         $scope.$apply();
+            //     } else {
+            //         _timerGetValue = setInterval(loadWeatherAgain, 1000);
+            //     }
+            // }
+            // function loadWeatherAgain() {
+            //     $scope.weatherArray = weatherFactory.getWeatherAction() || [];
+            //     //console.log('get again....'); console.log($scope.weatherArray);
+            //     if ($scope.weatherArray.length > 0) {
+            //         clearInterval(_timerGetValue);
+            //         //console.log('done....');
+            //         getLocalWeather();
+            //         getLocation();
+            //         $scope.isLoaded = !$scope.isLoaded;
+            //         $scope.$apply();
+            //     }
+            // }
             // 取得指定地區的天氣資料
             function getLocalWeather() {
                 //console.log('getLocalWeather....');
