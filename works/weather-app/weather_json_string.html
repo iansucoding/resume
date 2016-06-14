@@ -31,8 +31,7 @@
         $.getJSON(yql, function (data) {
             var xmlDoc = convert_string_to_xml(data.results[0]);
             var jsonData = xml2json(xmlDoc,"");
-            var jsonStr = JSON.stringify(jsonData);
-            $('#jsoncode').text(jsonStr);
+            $('#jsoncode').text(jsonData);
         });
     });
     </script>
