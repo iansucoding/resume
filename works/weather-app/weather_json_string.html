@@ -30,8 +30,8 @@
         // Pass a defined function to prevent cache-busting.
         $.getJSON(yql, function (data) {
             var xmlDoc = convert_string_to_xml(data.results[0]);
-            var jsonData = xml2json(xmlDoc,"");
-            $('#jsoncode').text(jsonData);
+            var jsonStr = xml2json(xmlDoc,"");
+            $('#jsoncode').text(jsonStr);
         });
     });
     </script>
