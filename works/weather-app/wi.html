@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <iframe src="http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml" frameborder="0"></iframe>
+    <div id="xxx"></div>
+    <script src="../../js/xml2json.js"></script>
+	<script src="../../js/jquery-1.8.3.min.js"></script>
+	<script>
+		$(function() {
+
+
+// find some demo xml - DuckDuckGo is great for this
+    var xmlSource = "http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml";
+
+// build the yql query. Could be just a string - I think join makes easier reading
+    var yqlURL = [
+        "http://query.yahooapis.com/v1/public/yql",
+        "?q=" + encodeURIComponent("select * from xml where url='" + xmlSource + "'"),
+        "&format=xml&callback=?"
+    ].join("");
+
+// Now do the AJAX heavy lifting        
+    $.getJSON(yqlURL, function(data){
+        var xmlContent = $(data.results[0]);
+        console.log(xmlContent);
+
+        var xmlData = $(xmlContent).find("dataset").html();
+        //yyy = JSON.parse(xml2json(xmlData,""))
+        $('#xxx').html(xxx);
+        console.log(xmlData);
+    });
+
+
+
+});
+	</script>
+</body>
+</html>
+
