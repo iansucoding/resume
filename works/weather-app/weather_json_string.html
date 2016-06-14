@@ -10,22 +10,31 @@
 <body>
     <code id="jsoncode"></code>
     <script>
-        $(function () {
-            //sample site that returns xml
-            site = 'http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml';
-
-
-            var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + site + '"') + '&format=xml&callback=?';
-
-            // Request that YSQL string, and run a callback function.
-            // Pass a defined function to prevent cache-busting.
-            $.getJSON(yql, function (data) {
-                //console.log(data.results[0]);
-                jsonVar = xml2json(data.results[0],"");
-                var jsonStr = JSON.stringify(jsonVar);
-                $('#jsoncode').text(jsonStr);
-            });
+    $(function () {
+        var convert_string_to_xml = function(strXML)
+        {
+            if (window.ActiveXObject) {
+                xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+                xmlDoc.async="false";
+                xmlDoc.loadXML(strXML);
+                return xmlDoc;
+            } else {
+                parser=new DOMParser();
+                xmlDoc=parser.parseFromString(strXML,"text/xml");
+                return xmlDoc;
+            }
+        }
+        var site = 'http://opendata.cwb.gov.tw/opendata/MFC/F-C0032-003.xml';
+        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + site + '"') + '&format=xml&callback=?';
+        // Request that YSQL string, and run a callback function.
+        // Pass a defined function to prevent cache-busting.
+        $.getJSON(yql, function (data) {
+            var xmlDoc = convert_string_to_xml(data.results[0]);
+            var jsonData = xml2json(xmlDoc,"");
+            var jsonStr = JSON.stringify(jsonData);
+            $('#jsoncode').text(jsonStr);
         });
+    });
     </script>
 </body>
 </html>
