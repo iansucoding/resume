@@ -19,7 +19,7 @@ var myAppData = {
                     ]
                 }
             ],
-        },{
+        }, {
             startYear: 2014,
             icon: { src: 'img/carrer.png', bgClass: 'cd-picture' },
             title: '東森信息科技/森森百貨',
@@ -153,6 +153,30 @@ var myAppData = {
                     list: ['In Tainan, Taiwan']
                 }
             ]
+        }
+    ], // end of timeline
+    skills: [
+        {
+            level: 9,
+            list: ['HTML5', 'CSS3', 'JavaScript', 'JQuery', 'AngularJs 1.x', 'Bootstrap']
+        }, {
+            level: 9,
+            list: ['ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
+        }, {
+            level: 7,
+            list: ['MongoDB', 'NodeJS', 'ReactJs']
+        }, {
+            level: 7,
+            list: ['Xcode', 'Swift']
+        }, {
+            level: 5,
+            list: ['ASP.NET WebForm', 'VB.NET', 'ASP']
+        }, {
+            level: 9,
+            list: ['Visual Studio', 'MSSQL', 'GIT', 'Sublime']
+        }, {
+            level: 5,
+            list: ['SVN', 'TFS', 'ASP', 'Facebook API']
         }
     ]
 

@@ -51,4 +51,11 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	});
+
+	// skills
+	var $skillBlock = $('#skills-block'), skillHtml = '';
+	myAppData.skills.forEach(function (skill) {
+		skillHtml = skill.list.map(function (li) { return '<p>' + li + '</p>' }).join('');
+		$skillBlock.append('<div class="col-xs-4 col-sm-2"><div class="v' + skill.level + ' circle"><strong>.0</strong></div>' + skillHtml + '</div>')
+	});
 });
