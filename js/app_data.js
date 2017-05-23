@@ -7,14 +7,13 @@ var myAppData = {
             contents: [
                 {
                     header: '工作內容',
-                    list: ['路燈系統', '京城銀行', '內部教學']
+                    list: ['路燈系統', '京城銀行', '員工教學，技術指導']
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET MVC (C#)',
-                        'MSSQL',
-                        'JavaScript',
-                        'JQuery',
+                        'ASP.NET MVC / C#',
+                        'MSSQL / Entity Framework',
+                        'JavaScript / JQuery',
                         'GIT',
                     ]
                 }
@@ -26,20 +25,17 @@ var myAppData = {
             contents: [
                 {
                     header: '工作內容',
-                    list: ['B2B/B2E供應商系統', '內部資訊管理系統', 'Web API', '需求訪談，設計架構']
+                    list: ['B2B/B2E供應商系統', '內部資訊管理系統', 'Web API', '新技術研究，尋找最佳解決方案']
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET MVC/WebApi (C#)',
-                        'Entity Framework',
-                        'MSSQL',
-                        'JavaScript',
-                        'JQuery',
-                        'AngularJs 1.x',
-                        'ReactJs',
-                        'Facebook API',
+                        'ASP.NET MVC / WebApi / SignalR / C#',
+                        'MSSQL / Entity Framework',
+                        'JavaScript / JQuery / AngularJs 1.x / ReactJs',
+                        'NodeJS / MongoDB / ElasticSearch',
                         'GIT',
-                        'SVN'
+                        'Swift  (iOS)',
+                        'RabbitMQ'
                     ]
                 }
             ],
@@ -54,15 +50,12 @@ var myAppData = {
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET MVC/WebApi (C#)',
-                        'Entity Framework',
-                        'MSSQL',
-                        'JavaScript',
-                        'JQuery',
-                        'AngularJs 1.x',
+                        'ASP.NET MVC / WebApi / SignalR / C#',
+                        'MSSQL / Entity Framework',
+                        'JavaScript / JQuery / AngularJs 1.x',
                         'Facebook API',
-                        'GIT',
-                        'SVN']
+                        'GIT / SVN',
+                    ]
                 }
 
             ]
@@ -98,8 +91,7 @@ var myAppData = {
                         'ASP (VBScript)',
                         'ASP.NET WebForm (VB.NET)',
                         'MSSQL',
-                        'JavaScript',
-                        'JQuery',
+                        'JavaScript / JQuery',
                         'TFS',
                     ]
                 }
