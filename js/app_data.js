@@ -7,13 +7,13 @@ var myAppData = {
             contents: [
                 {
                     header: '工作內容',
-                    list: ['路燈系統', '京城銀行', '員工教學，技術指導']
+                    list: ['路燈系統網站開發', '京城銀行網站開發', '員工教學，技術指導']
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET MVC / C#',
+                        'ASP.NET MVC / WebApi / C#',
                         'MSSQL / Entity Framework',
-                        'JavaScript / JQuery',
+                        'JavaScript / Angular 4 / JQuery ',
                         'GIT',
                     ]
                 }
@@ -156,7 +156,7 @@ var myAppData = {
             list: ['ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
         }, {
             level: 7,
-            list: ['MongoDB', 'NodeJS', 'ReactJs']
+            list: ['MongoDB', 'NodeJS', 'Angular 4', 'ReactJs']
         }, {
             level: 7,
             list: ['Xcode', 'Swift']
@@ -165,7 +165,7 @@ var myAppData = {
             list: ['ASP.NET WebForm', 'VB.NET', 'ASP']
         }, {
             level: 9,
-            list: ['Visual Studio', 'MSSQL', 'GIT', 'Sublime']
+            list: ['Visual Studio','Visual Studio Code', 'MSSQL', 'GIT', 'Sublime']
         }, {
             level: 5,
             list: ['SVN', 'TFS', 'ASP', 'Facebook API']
