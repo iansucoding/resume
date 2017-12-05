@@ -13,7 +13,7 @@ var myAppData = {
                     list: [
                         'ASP.NET MVC / WebApi / C#',
                         'MSSQL / Entity Framework',
-                        'JavaScript / Angular 4 / JQuery ',
+                        'JavaScript / Angular 4 / Ionic / JQuery ',
                         'GIT',
                     ]
                 }
@@ -150,25 +150,22 @@ var myAppData = {
     skills: [
         {
             level: 9,
-            list: ['HTML5', 'CSS3', 'JavaScript', 'JQuery', 'AngularJs 1.x', 'Bootstrap']
+            list: ['HTML5', 'CSS3', 'JavaScript', 'JQuery', 'Bootstrap']
         }, {
             level: 9,
             list: ['ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
         }, {
             level: 7,
-            list: ['MongoDB', 'NodeJS', 'Angular 4', 'ReactJs']
+            list: ['Angular 4', 'Ionic', 'Bootstrap']
         }, {
-            level: 7,
+            level: 5,
+            list: ['MongoDB', 'NodeJS', 'Angular 4', 'Bootstrap', 'ReactJs', 'AngularJs 1.x']
+        }, {
+            level: 5,
             list: ['Xcode', 'Swift']
         }, {
-            level: 5,
-            list: ['ASP.NET WebForm', 'VB.NET', 'ASP']
-        }, {
             level: 9,
-            list: ['Visual Studio','Visual Studio Code', 'MSSQL', 'GIT', 'Sublime']
-        }, {
-            level: 5,
-            list: ['SVN', 'TFS', 'ASP', 'Facebook API']
+            list: ['Visual Studio', 'Visual Studio Code', 'MSSQL', 'GIT']
         }
     ]
 
