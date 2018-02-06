@@ -1,4 +1,4 @@
-var myAppData = {
+﻿var myAppData = {
     timeline: [
         {
             startYear: 2017,
@@ -7,7 +7,7 @@ var myAppData = {
             contents: [
                 {
                     header: '工作內容',
-                    list: ['路燈系統網站開發', '京城銀行網站開發', '員工教學，技術指導']
+                    list: ['路燈系統網站開發', '網站銀行開發', '員工教學，技術指導']
                 }, {
                     header: '使用技能',
                     list: [
@@ -156,13 +156,13 @@ var myAppData = {
             list: ['ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
         }, {
             level: 7,
-            list: ['Angular 4', 'Ionic', 'Bootstrap']
+            list: ['Angular 5', 'Ionic', 'Bootstrap', 'ASP.NET Core 2']
         }, {
             level: 5,
-            list: ['MongoDB', 'NodeJS', 'Angular 4', 'Bootstrap', 'ReactJs', 'AngularJs 1.x']
+            list: ['React', 'React-Redux']
         }, {
             level: 5,
-            list: ['Xcode', 'Swift']
+            list: ['Xcode', 'Swift', 'MongoDB', 'NodeJS']
         }, {
             level: 9,
             list: ['Visual Studio', 'Visual Studio Code', 'MSSQL', 'GIT']
