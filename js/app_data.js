@@ -7,13 +7,13 @@
             contents: [
                 {
                     header: '工作內容',
-                    list: ['路燈系統網站開發', '網站銀行開發', '員工教學，技術指導']
+                    list: ['路燈系統網站開發', '空調系統網站開發', '網站銀行開發', '員工教學，技術指導']
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET MVC / WebApi / C#',
-                        'MSSQL / Entity Framework',
-                        'JavaScript / Angular 4 / Ionic / JQuery ',
+                        'ASP.NET Core 2.1 / ASP.NET MVC / WebApi / C#',
+                        'Web Scoket / MSSQL / Entity Framework',
+                        'JavaScript / React / Angular / Ionic / JQuery ',
                         'GIT',
                     ]
                 }
@@ -148,22 +148,22 @@
         }
     ], // end of timeline
     skills: [
-        {
+        { // front-end
             level: 9,
             list: ['HTML5', 'CSS3', 'JavaScript', 'JQuery', 'Bootstrap']
+        },{
+            level: 9,
+            list: ['React', 'React-Router', 'React-Redux', 'Material-ui']
         }, {
             level: 9,
-            list: ['ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
-        }, {
-            level: 7,
-            list: ['Angular 5', 'Ionic', 'Bootstrap', 'ASP.NET Core 2']
-        }, {
+            list: ['Angular', 'Ionic']
+        }, { // back-end
+            level: 9,
+            list: ['ASP.NET Core 2.1', 'ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
+        }, { // other languages
             level: 5,
-            list: ['React', 'React-Redux']
-        }, {
-            level: 5,
-            list: ['Xcode', 'Swift', 'MongoDB', 'NodeJS']
-        }, {
+            list: ['Swift', 'MongoDB', 'NodeJS']
+        }, { // tools
             level: 9,
             list: ['Visual Studio', 'Visual Studio Code', 'MSSQL', 'GIT']
         }
