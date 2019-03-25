@@ -7,11 +7,18 @@
             contents: [
                 {
                     header: '工作內容',
-                    list: ['路燈系統網站開發', '空調系統網站開發', '網站銀行開發', '員工教學，技術指導']
+                    list: [
+                        '空調系統網站開發', 
+                        '網站銀行開發', 
+                        '路燈系統網站開發', 
+                        'Server設備管理監控網站',
+                        '銀行活動網站第三方驗證功能',
+                        '員工教學，技術指導'
+                    ]
                 }, {
                     header: '使用技能',
                     list: [
-                        'ASP.NET Core 2.1 / ASP.NET MVC / WebApi / C#',
+                        'ASP.NET Core 2.2 / ASP.NET MVC / WebApi / C#',
                         'Web Scoket / MSSQL / Entity Framework',
                         'JavaScript / React / Angular / Ionic / JQuery ',
                         'GIT',
@@ -159,7 +166,7 @@
             list: ['Angular', 'Ionic']
         }, { // back-end
             level: 9,
-            list: ['ASP.NET Core 2.1', 'ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
+            list: ['ASP.NET Core 2.2', 'ASP.NET MVC', 'ASP.NET Web API', 'C#', 'Entity Framework', 'Linq', 'SignalR']
         }, { // other languages
             level: 5,
             list: ['Swift', 'MongoDB', 'NodeJS']
